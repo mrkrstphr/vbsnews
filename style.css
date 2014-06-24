@@ -1,0 +1,65 @@
+body, td {
+    font-family: verdana, arial;
+    font-size: 10pt;
+}
+
+form {
+	margin: 0px;
+}
+
+.bigtable {
+	border: 1px solid #000000;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	text-align: left;
+	width: 575px;
+}
+
+.topmenu {
+	background-color: #efefef;
+	font-size: 8pt;
+	height: 20px;
+}
+
+a:link {
+	color: #003264;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #003264;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+    text-decoration: underline;;
+}
+
+.bars {
+	background-color: #ffcc00;
+	border: 1px solid #000000;
+}
+
+.formfield {
+	background-color: #efefef;
+}
+
+.barcolor {
+	background-color: #e5e5e5;
+}
+
+.barborder {
+	border: 1px solid #b9b9b9;
+}
+
+.mainback {
+	background-image: url(images/background.gif); 
+	background-repeat: no-repeat; 
+	background-position: right top; 
+	
+	text-align: center; 
+	vertical-align: top;
+}
