@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// FUNCTION - basicTag() : selects all checkboxes in a form
+///////////////////////////////////////////////////////////////////////////////////////////////////
+function selectAll(form, checked) {
+    var i = 0;
+
+    for (i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].type == 'checkbox') {
+            form.elements[i].checked = checked;
+        }
+    }
+}

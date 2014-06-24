@@ -1,0 +1,128 @@
+<html>
+<head>
+    <title>vbsNews: Readme File</title>
+    <style type="text/css">
+        body, td {
+            font-family: verdana, arial;
+            font-size: 10pt;
+        }
+
+        .main {
+            background-color: #f9f9f9;
+            border: 1px solid #d6d6d6;
+
+            padding: 8px;
+        }
+
+        pre {
+            background-color: #fcfcfc;
+            border: 1px solid #bfbfbf;
+            padding: 4px;
+        }
+
+        a, a:visited {
+            color: #ff9900;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+        .file {
+            font-family: courier new, verdana;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <div style="margin-left: auto; margin-right: auto; text-align: left; width: 520px;">
+            <div class="main">
+                <span style="font-size: 22pt; font-weight: bold; letter-spacing: 2px;">
+                vbsNews: Readme File
+                </span>
+                <hr />
+                <div style="text-align: center;">
+                    <a href="#req">Requirements</a> | <a href="#install">Installation</a> | 
+                    <a href="#update">Updating</a> | <a href="#general">General Use</a>
+                </div>
+                <br />
+
+                This file contains important information about the installation and use of <i>vbsNews</i>. Please
+                read this file carefully.<br /><br />
+
+                <b>What is vbsNews</b>?<br />
+                <i>vbsNews</i> is a news management system using the power of PHP and MySQL. Through an easy to use, yet
+                powerful User Control Panel, you can add/remove and modify news items, add/remove users, and setup advanced
+                settings that control the way your news looks.<br /><br />
+
+                <a name="req" style="color: #000000;"><b>Requirements</b></a><br />
+                <i>vbsNews</i> requires PHP 4.3+ and MySQL 3.23+. Although <i>vbsNews</i> wasn't tested on anything lower than
+                these requirements, it may function properly. If you attempt to use it on lower versions, please contact us
+                and let us know whether or not it works.<br /><br />
+
+                <a name="install" style="color: #000000;"><b>Installation</b></a><br />
+                <ol style="margin-top: 0px; margin-bottom: 0px;">
+                    <li>Before you can use <i>vbsNews</i>, you must have a MySQL database ready to use. <i>vbsNews</i> does not require its own database, so it can be used within an existing one. If you do not have a database setup and do not know how, contract your system administrator for help. Most hosting companies have a User Control panel that allows you to adminster your MySQL databases. Make sure you have one ready to use before you begin.</li>
+                    <li>Open the file <span style="font-family: courier new, verdana;">dbconfig.php</span> and modify the
+                    first five lines as described in the file. If you don't know the proper values, please contact your system 
+                    administrator for help.</li>
+                    <li>Open the file <span style="font-family: courier new, verdana;">display.php</span> and modify the
+                    first line as described in the file. If you don't know the proper values, please contact your system 
+                    administrator for help.</li>
+                    <li>Upload all files (except for <span style="font-family: courier new, verdana;">readme.html</span> and 
+                    <span style="font-family: courier new, verdana;">versions.html</span> files) to a directory of your
+                    choice. It is recommeded that you create a new directory (such as <span style="font-family: courier new, verdana;">http://yoursite.com/news/</span>) for the
+                    files.</li>
+                    <li>Run the <span style="font-family: courier new, verdana;">install.php</span> file and follow the 
+                    instructions given. When you are done with this, <i>vbsNews</i> is ready for use.</span>
+                    <li><b>Important</b>: It is recommended that you delete the 
+                    <span style="font-family: courier new, verdana;">install.php</span> and <span style="font-family: courier new, verdana;">db_install.php</span> files after installation for security reasons.</li>
+                </ol><br />
+
+                <a name="update" style="color: #000000;"><b>Updating</b></a><br />
+                <ol style="margin-top: 0px; margin-bottom: 0px;">
+                    <li>Unzip the <i>vbsNews</i> file and replace all files EXCEPT <span style="font-family: courier new, verdana;">install.php</span> and <span style="font-family: courier new, verdana;">dbconfig.php</span> (if it exists). If the file doesn't exist in your installation, unzip it as well.</li>
+                    <li>If you had to unzip the <span style="font-family: courier new, verdana;">dbconfig.php</span> file, open it up and modify the first few lines as described in the file. When finished, open up <span style="font-family: courier new, verdana;">display.php</span> and replace the first line as described.</li>
+                    <li>Upload the new files (if you are using <i>vbsNews</i> on a remote server, replacing the already existing files.</li>
+                    <li>Run <span style="font-family: courier new, verdana;">update.php</span>. This file will update your MySQL database with the changes made in the new release. When finished, delete this file (and <span style="font-family: courier new, verdana;">install.php</span> if it exists on your server).</li>
+                    <li>Your new version of <i>vbsNews</i> should now be ready to use.</li>
+                </ol><br />
+
+                <a name="general" style="color: #000000;"><b>General Use</b></a><br />
+                Below is general code that will include the news within your page. You MUST put this code within a .php page. If your pages are currently HTML pages, it is as simple as changing the extension to .php. The HTML file will still function properly.
+                <br /><br />
+
+                To include <b>news</b>, paste this snippet where you want the news to appear:<br /><br />
+
+
+<pre>&lt;?php
+    include_once '/path/to/news/folder/display.php';
+    execute();
+?&gt;</pre>
+
+                It's that simple. Make sure '/path/to/news/folder/' is the correct path to where you installed 
+                <i>vbsNews</i>.<br /><br />
+
+                For <b>headers</b> (where 5 is the number you want to show):<br /><br />
+
+<pre>&lt;?php
+    include_once '/path/to/news/folder/display.php';
+    headers(5);
+?&gt;</pre>
+
+                For a detailed explaination on how to include the news within your pages, check out the 
+                <a href="http://www.vbshelf.com/support/manual.php" target="_blank">User Manual</a>.
+
+                <br /><br />
+
+                <b>Copyright</b><br />
+                This software and the name <i>vbsNews</i> is Copyright 2003 
+                <a href="http://www.vbshelf.com/" target="_blank">VBShelf</a>. All rights reserved.<br /><br />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

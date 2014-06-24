@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title><?php echo $title; ?></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <?php
+        if (isset($jsFiles)) {
+            $jsTemplate = '<script type="text/javascript" src="javascript/<file>"></script>';
+
+            if (is_array($jsFiles)) {
+                for ($i = 0; $i < count($jsFiles); $i++) {
+                    echo str_replace('<file>', $jsFiles[$i], $jsTemplate);
+                }
+            } else {
+                echo str_replace('<file>', $jsFiles, $jsTemplate);
+            }
+        }
+    ?>
+</head>
+<body style="text-align: center;">
+    <table cellspacing="0" cellpadding="0" class="bigtable">
+        <tr>
+            <td style="border-bottom: 1px solid #000000; text-align: center;">
+                <img alt="" border="0" src="images/logo.gif" style="display: block;">
+            </td>
+        </tr>
+        <tr>
+            <td class="topmenu" style="border-bottom: 1px solid black; text-align: center; vertical-align: middle;">
+                <?php
+                    include 'menu.php';
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td class="mainback">
+                <table cellpadding="3" cellspacing="0" style="margin-left: auto; margin-right: auto; width: 565;">
+                    <tr>
+                        <td style="text-align: left;">
+                            <br />
